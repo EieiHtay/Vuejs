@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Eg 5</title>
+	<script type="text/javascript" src="vue.min.js"></script>
+</head>
+<body>
+	<div id="app-5">
+		<p>{{ message }}</p>
+		<!-- event => v-on:event -->
+		<button v-on:click="reverseMessage">Reverse Message</button>
+	</div>
+
+	<script type="text/javascript">
+		var app5 = new Vue({
+			el: '#app-5',
+			data: {
+				message: 'Hello Vue.js!'
+			},
+			methods: {
+				reverseMessage: function () {
+					// text reverse => split('').reverse().join('') , this => call variable in data
+					this.message = this.message.split('').reverse().join('')
+				}
+			}
+		})
+	</script>
+
+</body>
+</html>
